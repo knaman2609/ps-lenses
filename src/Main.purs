@@ -15,5 +15,6 @@ main :: Effect Unit
 main = do
   let rec = {name : (Tuple "name" (Just "Naman"))}
   let y = view (_name <<< _2 <<< _Just) rec
+  let x = set (_name <<< _2) "John" { name: (Tuple "x" "y"), age: 40 }
 
-  log $ y
+  log $ show $ x
